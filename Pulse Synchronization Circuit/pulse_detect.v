@@ -1,3 +1,4 @@
+
 `timescale 1ns/1ns
 
 module pulse_detect(
@@ -20,12 +21,12 @@ always @(posedge clk_fast or negedge rst_n )
 begin
 	if(!rst_n)
 	in_rs <= 'b0;
-	 else if(in_r1) 
-	 begin
-	 	in_rs <= 'b0;
-	 end
+	//  else if(in_r1) 
+	//  begin
+	//  	in_rs <= 'b0;
+	//  end
 	else if(data_in)
-	in_rs <= 1'b1;
+	in_rs <= ~in_rs;
 	else
 	in_rs <= in_rs;
 end
@@ -56,19 +57,19 @@ end
 
 
 /////
-always @(posedge clk_fast or negedge rst_n )
-begin
-	if(!rst_n)begin
-	in_r0 <= 'b0;
-	in_r1 <= 'b0;
-	end
-	else
-	begin
-	in_r0 <= out_r1;
-	in_r1 <= in_r0;
-	end
-end 
+// always @(posedge clk_fast or negedge rst_n )
+// begin
+// 	if(!rst_n)begin
+// 	in_r0 <= 'b0;
+// 	in_r1 <= 'b0;
+// 	end
+// 	else
+// 	begin
+// 	in_r0 <= out_r1;
+// 	in_r1 <= in_r0;
+// 	end
+// end 
 
-assign dataout = out_r0 & ~out_r1;
+assign dataout = out_r0 & ~out_r1 | ~out_r0 & out_r1 ;
 ///
 endmodule
