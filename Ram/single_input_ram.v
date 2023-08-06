@@ -20,6 +20,6 @@ else if(enb) begin
 mem [addr] <= w_data;
 end
 end
-assign r_data = ~enb? 'b0 : mem[addr];
+    assign r_data = ~enb? 'b0 : mem[addr];//asynchrnous r_data follow enb signal.
 //*************code***********//
 endmodule
