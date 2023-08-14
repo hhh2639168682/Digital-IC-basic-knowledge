@@ -70,6 +70,6 @@ end
 // 	end
 // end 
 
-assign dataout = out_r0 & ~out_r1 | ~out_r0 & out_r1 ;
+assign dataout = out_r0 ^ out_r1 ;
 ///
 endmodule
