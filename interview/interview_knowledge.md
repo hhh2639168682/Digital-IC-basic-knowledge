@@ -1,4 +1,4 @@
-# 时序约束
+## 时序约束
 set_master_clock--主时钟  
 set_clock_latency---大概估值  
 set_clock_transition---报错，加buffer    
