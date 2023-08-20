@@ -31,23 +31,23 @@ report_timing  report_area  report_power————report_qor
 竞争约束：T1 + TDQ + Tcomb >= Thold +T2
 
 # setup time、hold time
-*setup time：*触发器在时钟上升沿到来之前，其数据输入端数据保持不变的最小时间。
+**setup time** 触发器在时钟上升沿到来之前，其数据输入端数据保持不变的最小时间。
 
-*hold time：*触发器在时钟上升沿到来之后，其数据输入端必须保持不变的最小时间。
+**hold time** 触发器在时钟上升沿到来之后，其数据输入端必须保持不变的最小时间。
 
-*setup time violation:*
+**setup time violation:**
 
 fix本质是增大setup time
-*Tsetup = T2 + Tclk - T1 - TDQ - Tcomb*  
+**Tsetup = T2 + Tclk - T1 - TDQ - Tcomb**  
 (1)降低时钟频率，增大时钟周期--↑Tclk
 (2)在时钟路径上加buffer--↑T2  
 (3)用延迟更小的触发器--↓TDQ  
 (4)组合逻辑优化或插入流水线，缩短关键路径--↓Tcomb
 
-*hold time violation:*
+**hold time violation:**
 
 fix本质是让数据更晚到来  
-*Thold >= T1 + TDQ + Tcomb - T2*
+**Thold >= T1 + TDQ + Tcomb - T2**
 (1)在数据路径上插buffer--↑Tcomb（fix hold time）
 (2)换有更大器件延迟的触发器--↑TDQ
 (3)优化时钟路径，让时钟来的更早
