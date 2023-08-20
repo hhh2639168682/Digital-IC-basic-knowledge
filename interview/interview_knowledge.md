@@ -27,10 +27,12 @@ set_output_delay -min ---data_pcb_delay - clk_pcb_delay - hold time  (≈-holdti
 report_timing  report_area  report_power————report_qor  
 
 最小时钟约束：T2 + Tclk >= TDQ + Tcomb + Tsetup +  T1
+
 竞争约束：T1 + TDQ + Tcomb >= Thold +T2
 
 # setup time、hold time
 setup time：触发器在时钟上升沿到来之前，其数据输入端数据保持不变的最小时间。
+
 hold time：触发器在时钟上升沿到来之后，其数据输入端必须保持不变的最小时间。
 
 setup time violation:
