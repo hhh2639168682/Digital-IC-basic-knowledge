@@ -39,15 +39,15 @@ report_timing  report_area  report_power————report_qor
 
 fix本质是增大setup time
 **Tsetup = T2 + Tclk - T1 - TDQ - Tcomb**  
-(1)降低时钟频率，增大时钟周期--↑Tclk
-(2)在时钟路径上加buffer--↑T2  
-(3)用延迟更小的触发器--↓TDQ  
-(4)组合逻辑优化或插入流水线，缩短关键路径--↓Tcomb
+(1)降低时钟频率，增大时钟周期--↑Tclk  
+(2)在时钟路径上加buffer--↑T2    
+(3)用延迟更小的触发器--↓TDQ    
+(4)组合逻辑优化或插入流水线，缩短关键路径--↓Tcomb  
 
 **hold time violation:**
 
 fix本质是让数据更晚到来  
-**Thold >= T1 + TDQ + Tcomb - T2**
-(1)在数据路径上插buffer--↑Tcomb（fix hold time）
-(2)换有更大器件延迟的触发器--↑TDQ
-(3)优化时钟路径，让时钟来的更早
+**Thold >= T1 + TDQ + Tcomb - T2**  
+(1)在数据路径上插buffer--↑Tcomb（fix hold time)  
+(2)换有更大器件延迟的触发器--↑TDQ  
+(3)优化时钟路径，让时钟来的更早  
