@@ -73,4 +73,4 @@ fix本质是让数据更晚到来
 
 在同一芯片上使用低Vt和高Vt设备，结合电源门控技术，达到快速开启和低静态功耗的效果。 
 
-![multi bits]([https://github.com/hhh2639168682/Digital-IC-basic-knowledge/blob/main/multi_bits_input/mulbits.png "multi bits"](https://github.com/hhh2639168682/Digital-IC-basic-knowledge/blob/main/interview/MicrosoftTeams-image%20(7).png)https://github.com/hhh2639168682/Digital-IC-basic-knowledge/blob/main/interview/MicrosoftTeams-image%20(7).png)
+![MicrosoftTeams-image%20(7)]([https://github.com/hhh2639168682/Digital-IC-basic-knowledge/blob/main/multi_bits_input/mulbits.png "multi bits"](https://github.com/hhh2639168682/Digital-IC-basic-knowledge/blob/main/interview/MicrosoftTeams-image%20(7).png)https://github.com/hhh2639168682/Digital-IC-basic-knowledge/blob/main/interview/MicrosoftTeams-image%20(7).png)
