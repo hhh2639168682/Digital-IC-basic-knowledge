@@ -37,7 +37,7 @@ report_timing  report_area  report_power————report_qor
 
 **setup time violation:**
 
-fix本质是增大setup time
+fix本质是增大setup time  
 **Tsetup = T2 + Tclk - T1 - TDQ - Tcomb**  
 (1)降低时钟频率，增大时钟周期--↑Tclk  
 (2)在时钟路径上加buffer--↑T2    
