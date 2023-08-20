@@ -23,6 +23,7 @@ report_qor
 
 # 优化频率
 RTL:流水线设计，插入寄存器破坏最长路径  
+
 gate_level:  
 ①Register balancing 寄存器平衡, 将逻辑从管道的一个阶段移动到另一阶段  
 ②Removing Hierarchy消除层次结构 合并module  
