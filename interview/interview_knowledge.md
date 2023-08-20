@@ -1,4 +1,5 @@
 # library setting
+set .lib, set .db
 Target library是你想要构建的内容。它可以是共享库、静态库或可执行文件   
 Link library是你的目标库或可执行文件所依赖的内容。它们包含目标需要正确运行的已编译代码  
 
