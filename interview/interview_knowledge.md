@@ -22,6 +22,8 @@ report_qor
 整个设计中的最长组合逻辑延迟，它决定了工作频率，也是优化的目标  
 
 # 优化频率
+RTL:流水线设计，插入寄存器破坏最长路径  
+gate_level:  
 ①Register balancing 寄存器平衡, 将逻辑从管道的一个阶段移动到另一阶段  
 ②Removing Hierarchy消除层次结构 合并module  
 ③选择高级功能模块的高速实现
