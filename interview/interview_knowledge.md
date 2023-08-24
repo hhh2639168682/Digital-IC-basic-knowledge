@@ -47,7 +47,7 @@ fix本质是增大setup time
 **hold time violation:**
 
 fix本质是让数据更晚到来  
-**Thold >= T1 + TDQ + Tcomb - T2**  
+**Thold = T1 + TDQ + Tcomb - T2**  
 (1)在数据路径上插buffer--↑Tcomb（fix hold time)  
 (2)换有更大器件延迟的触发器--↑TDQ  
 (3)优化时钟路径，让时钟来的更早  
