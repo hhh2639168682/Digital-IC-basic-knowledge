@@ -1,31 +1,3 @@
-# library setting
-set .lib, set .db
-Target library是你想要构建的内容。它可以是共享库、静态库或可执行文件   
-Link library是你的目标库或可执行文件所依赖的内容。它们包含目标需要正确运行的已编译代码  
-
-# 关键路径
-整个设计中的最长组合逻辑延迟，它决定了工作频率，也是优化的目标  
-
-# 提高频率，降低时钟周期
-RTL:流水线设计，插入寄存器破坏最长路径  
-
-gate_level:  
-①Register balancing 寄存器平衡, 将逻辑从管道的一个阶段移动到另一阶段  
-②Removing Hierarchy消除层次结构 合并module  
-③选择高级功能模块的高速实现
-# 同步复位
-优点:百分百同步,可以过滤毛刺.
-
-缺点:复位信号必须大于clk, 还要考虑skew, Tcomb, TDQ, reset delay, 需要较多的logic resource.
-# 异步复位
-优点:异步复位信号识别方便，而且可以很方便的使用全局复位。由于大多数的厂 商目标库内的触发器都有异步复位端口，可以节约逻辑资源。  
-
-缺点:复位信号容易受到毛刺的影响。复位结束时刻恰在亚稳态窗口内时，无法决定现在的复位状态是 1 还是 0，会导致亚稳态。    
-# 异步复位同步释放
-rst_async_n=0时，rst_sync_n会被立即复位为0，输出到后续电路用于异步复位；  
-
-rst_async_n=1时，假设此时恰好在时钟沿附近，会造成recovery或者removal的违例，但经过DFF1和DFF2的两级同步，rst_sync_n释放沿与时钟沿同步，送入到后续电路不会再有recovery和removal违例出现。  
-
 # 时序约束
 set_master_clock--主时钟  
 set_clock_latency---大概估值  latency + transition < hold time  
@@ -63,6 +35,35 @@ fix本质是让数据更晚到来
 (1)在数据路径上插buffer--↑Tcomb（fix hold time)  
 (2)换有更大器件延迟的触发器--↑TDQ  
 (3)优化时钟路径，让时钟来的更早  
+
+# library setting
+set .lib, set .db
+Target library是你想要构建的内容。它可以是共享库、静态库或可执行文件   
+Link library是你的目标库或可执行文件所依赖的内容。它们包含目标需要正确运行的已编译代码  
+
+# 关键路径
+整个设计中的最长组合逻辑延迟，它决定了工作频率，也是优化的目标  
+
+# 提高频率，降低时钟周期
+RTL:流水线设计，插入寄存器破坏最长路径  
+
+gate_level:  
+①Register balancing 寄存器平衡, 将逻辑从管道的一个阶段移动到另一阶段  
+②Removing Hierarchy消除层次结构 合并module  
+③选择高级功能模块的高速实现
+# 同步复位
+优点:百分百同步,可以过滤毛刺.
+
+缺点:复位信号必须大于clk, 还要考虑skew, Tcomb, TDQ, reset delay, 需要较多的logic resource.
+# 异步复位
+优点:异步复位信号识别方便，而且可以很方便的使用全局复位。由于大多数的厂 商目标库内的触发器都有异步复位端口，可以节约逻辑资源。  
+
+缺点:复位信号容易受到毛刺的影响。复位结束时刻恰在亚稳态窗口内时，无法决定现在的复位状态是 1 还是 0，会导致亚稳态。    
+# 异步复位同步释放
+rst_async_n=0时，rst_sync_n会被立即复位为0，输出到后续电路用于异步复位；  
+
+rst_async_n=1时，假设此时恰好在时钟沿附近，会造成recovery或者removal的违例，但经过DFF1和DFF2的两级同步，rst_sync_n释放沿与时钟沿同步，送入到后续电路不会再有recovery和removal违例出现。  
+
 
 # ASIC低功耗设计
 **多电压设计 (Multi-Vt Design)**
