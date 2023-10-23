@@ -17,6 +17,10 @@
 **多bit**  
 
 握手机制
+设备1将 valid 信号置1，告诉设备2，数据准备就绪了，请查收
+设备2此刻正处于忙碌状态无法接收数据，设备2将 ready 信号保持为0
+设备2空闲了，将 ready 信号置1接收设备1的数据
+设备1看到设备2的 ready 为1，它知道设备2已经接收好数据了，将 valid 置0同时撤销数据，准备下一次发送
 
 异步FIFO
 ![A_fifo](https://github.com/hhh2639168682/Digital-IC-basic-knowledge/blob/main/interview/801B0340EAA7D418025E65E160ADE22B.png "A_fifo")
