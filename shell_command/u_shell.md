@@ -57,12 +57,12 @@ cat -b file1 显示文件全部内容,带上行号,空白行不带
 **head -n 20 file1** 显示文件前20行
 
 # 进程
-**ps** 查看当前terminal的进程
+**ps** 查看当前terminal的进程  
 **ps -f** 显示当前terminal详细进程  
 
 
-**top**  实时显示监控进程变化
-**top -u chrishhh** 实时显示该用户情况
+**top**  实时显示监控进程变化  
+**top -u chrishhh** 实时显示该用户情况  
 
 
 
