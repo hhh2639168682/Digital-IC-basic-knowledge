@@ -23,10 +23,10 @@
 
 
 **rm file1** 删除file1  
-  rm -r document/ 删除文件夹  
-     -i 删除文件会有提示  
-  rm  *.txt 删除所有后缀为.txt的文件  
-  rm  -rf document 遇到异常不提示  
+&nbsp;&nbsp;rm -r document/ 删除文件夹  
+&nbsp;&nbsp;&nbsp;-i 删除文件会有提示  
+&nbsp;&nbsp;rm  *.txt 删除所有后缀为.txt的文件  
+&nbsp;&nbsp;rm  -rf document 遇到异常不提示  
 # 操作文件夹
 **.** 表示当前目录  
 例如 cp ~/test.txt . 把home目录下的test.txt 复制到当前目录  
@@ -42,7 +42,7 @@
 
 
 **cat file1** 显示文件全部内容
-  cat -n file1 显示文件全部内容,带上行号  
-      -b 空白行不带
+&nbsp;&nbsp;cat -n file1 显示文件全部内容,带上行号  
+&nbsp;&nbsp;&nbsp;-b 空白行不带
 
 
