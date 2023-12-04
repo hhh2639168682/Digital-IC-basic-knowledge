@@ -46,3 +46,25 @@ cat -n file1 显示文件全部内容,带上行号
 cat -b file1 显示文件全部内容,带上行号,空白行不带
 
 
+**more** **less** 分屏显示的内容，会在当前屏幕下显示百分比  
+
+
+**tail file1** 显示文件最后10行 
+**tail -n 20 file1** 显示文件最后20行  
+
+
+**head file1** 显示文件前10行  
+**head -n 20 file1** 显示文件前20行
+
+# 进程
+**ps** 查看当前terminal的进程
+**ps -f** 显示当前terminal详细进程  
+
+
+**top**  实时显示监控进程变化
+**top -u chrishhh** 实时显示该用户情况
+
+
+
+
+
