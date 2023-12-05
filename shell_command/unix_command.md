@@ -9,8 +9,8 @@
 
 
 **cp test documents/** 复制test到document文件夹  
-  cp /etc/network/*.conf ./ 复制.conf到当前文件夹  
-  cp -r(-R) scripts/ mod_scripts 复制scripts下所有内容到mod_scripts下  
+  cp /etc/network/*.conf ./ 复制“.conf”到当前文件夹  
+  cp -r(-R) scripts/ mod_scripts 复制“scripts”下所有内容到“mod_scripts”下  
 
 
 **ln -s** 软链接
@@ -70,8 +70,29 @@ cat -b file1 显示文件全部内容,带上行号,空白行不带
 
 **df -h**  显示硬盘大小和使用量  
 **du** 显示某一个文件夹或者文件大小    
-**du -sh** -s选项控制不显示各子文件夹大小，只显示第一层大小；  
--h 按用户可读方式显示
+**du -sh** “-s”选项控制不显示各子文件夹大小，只显示第一层大小；  
+“-h”按用户可读方式显示
+
+# 数据操作
+**grep [options] pattern [file]**  查找数据
+
+
+**grep -v ok file1** 在file1中找**不存在**“ok”的行
+
+
+**grep -n ok file*** 在当前目录下所有以 “file” 开头的文件中搜索包含“ok”的行，并打印这些行及其所在的行号。  
+
+
+加上*会遍历所有的以file开头的文件，不加只查找显示“file”文件
+
+**grep “[0-9]\+” ok*** 在文件 file 中搜索包含一个或多个连续数字的行，并打印出这些行。
+
+# 解压缩
+**tar -cvf test.tar test1/ test2/**  把文件夹test1和test2打包成test.tar
+
+**tar -xvf test.tar**  把test.tar解压
+
+
 
 
 
