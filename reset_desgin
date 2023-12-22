@@ -1,0 +1,56 @@
+# 复位相关
+
+
+**外部输入的复位信号要做滤毛刺处理**
+
+```
+module rst_filter_buffer(
+input clk,
+input rstn_in,
+output rstn_out
+);
+wire rst_in;
+reg d1,d2,d3,d4,d5;
+assign rst_in = ~rstn_in;
+always@(posedge clk or negedge rst_in)
+begin
+    if(!rst_in)
+    begin
+        d1 <= 1’b1;
+        d2 <= 1’b1;
+        d3 <= 1’b1;
+        d4 <= 1’b1;
+        d5 <= 1’b1;
+    end
+    else
+    begin
+        d1 <= 1’b1;
+        d2 <= d1;
+        d3 <= d2;
+        d4 <= d3;
+        d5 <= d4;
+    end
+end
+assign rstn_out = d4 | d5;
+endmodule
+```
+
+**所有复位由复位模块产生**
+
+
+**同步复位**
+优点:百分百同步,可以过滤毛刺.
+
+缺点:复位信号必须大于clk, 还要考虑skew, Tcomb, TDQ, reset delay, 需要较多的logic resource.
+
+
+**异步复位**
+优点:异步复位信号识别方便，而且可以很方便的使用全局复位。由于大多数的厂 商目标库内的触发器都有异步复位端口，可以节约逻辑资源。  
+
+缺点:复位信号容易受到毛刺的影响。复位结束时刻恰在亚稳态窗口内时，无法决定现在的复位状态是 1 还是 0，会导致亚稳态。    
+
+
+**异步复位同步释放**
+rst_async_n=0时，rst_sync_n会被立即复位为0，输出到后续电路用于异步复位；  
+
+rst_async_n=1时，假设此时恰好在时钟沿附近，会造成recovery或者removal的违例，但经过DFF1和DFF2的两级同步，rst_sync_n释放沿与时钟沿同步，送入到后续电路不会再有recovery和removal违例出现。  
