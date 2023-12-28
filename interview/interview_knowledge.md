@@ -38,8 +38,10 @@ fix本质是让数据更晚到来
 
 # library setting
 set .lib, set .db
-Target library是你想要构建的内容。它可以是共享库、静态库或可执行文件   
-Link library是你的目标库或可执行文件所依赖的内容。它们包含目标需要正确运行的已编译代码  
+Target library(工艺库)是综合后电路网表最终要映射的库。由fab提供，一般是.db，可以由文本格式的.lib转换过来   
+Link library，设置模块或者单元电路的引用，所有dc可能用到的库，都需要link，包括用到基础单元库，还包括一些ip库，rom，pad，pll，memeory。
+symbol library，定义了电路现实的schematic库， .sdb文件
+synthetic library，初始化dc时，设置designware库，综合库包含高级通用组件，例如加法器、乘法器。
 
 # 关键路径
 整个设计中的最长组合逻辑延迟，它决定了工作频率，也是优化的目标  
